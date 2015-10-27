@@ -2,45 +2,45 @@
 <html lang="en" ng-app="clickApp" class="no-js">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>This Movie is Click!</title>
-    <meta name="description" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>This Movie is Click!</title>
+  <meta name="description" content="">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-    <!--  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">-->
-    <!--  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="app.css">
-    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <!--  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">-->
+  <!--  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">-->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
-    <style>
-        .navbar {
-            border-radius: 0;
-        }
-    </style>
+  <style>
+    .navbar {
+      border-radius: 0;
+    }
+  </style>
 
 </head>
 
 <body>
 
-    <div class="navbar navbar-inverse" role="navigation" ng-controller="HeaderCtrl">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="#">Click!</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>
-            <li ng-class="{ active: isActive('#/clickQuiz')}"><a href="#/clickQuiz">Click Quiz</a></li>
-            <li ng-class="{ active: isActive('#/clickFacts')}"><a href="#/clickFacts">Click Facts</a></li>
-        </ul>
+  <div class="navbar navbar-inverse" role="navigation" ng-controller="HeaderCtrl">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="#">Click!</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>
+      <li ng-class="{ active: isActive('#/clickQuiz')}"><a href="#/clickQuiz">Click Quiz</a></li>
+      <li ng-class="{ active: isActive('#/clickFacts')}"><a href="#/clickFacts">Click Facts</a></li>
+    </ul>
+  </div>
 
-    <!--
+  <!--
   <ul class="menu">
     <li><a href="#/clickHome">Click</a></li>
     <li><a href="#/clickQuiz">Click Quiz</a></li>
@@ -48,25 +48,25 @@
   </ul>
 -->
 
-    <div ng-view></div>
+  <div ng-view></div>
 
-    <!--  <div>Angular seed app: v<span app-version></span></div>-->
+  <!--  <div>Angular seed app: v<span app-version></span></div>-->
 
-    <!-- In production use:
+  <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-    <!--  <script src="bower_components/angular/angular.js"></script>-->
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <!--    <script src="bower_components/angular-animate/angular-animate.js"></script>-->
-<!--    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
-    <script src="app.js"></script>
-    <script src="clickHome/clickHome.js"></script>
-    <script src="clickQuiz/clickQuiz.js"></script>
-    <script src="clickFacts/clickFacts.js"></script>
-    <script src="components/util/header.js"></script>
-    <script src="components/version/version.js"></script>
-    <script src="components/version/version-directive.js"></script>
-    <script src="components/version/interpolate-filter.js"></script>
+  <!--  <script src="bower_components/angular/angular.js"></script>-->
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <!--    <script src="bower_components/angular-animate/angular-animate.js"></script>-->
+  <!--    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>-->
+  <script src="app.js"></script>
+  <script src="clickHome/clickHome.js"></script>
+  <script src="clickQuiz/clickQuiz.js"></script>
+  <script src="clickFacts/clickFacts.js"></script>
+  <script src="components/util/header.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
 
 </body>
 
