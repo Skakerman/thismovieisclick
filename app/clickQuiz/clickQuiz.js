@@ -20,6 +20,7 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
     templateUrl: 'clickQuiz/partial-quiz.html',
     link: function (scope, elem, attrs) {
       scope.start = function () {
+        debugger;
         scope.id = 0;
         scope.quizOver = false;
         scope.inProgress = true;
@@ -41,12 +42,12 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
 
       scope.checkAnswer = function () {
         debugger;
-        // This doesn't work, scope.answer is reading the value from the 
+        // TODO: This doesn't work, scope.answer is reading the value from the 
         // JSON for the question set. Not what is input
-        console.log(scope.answer);
+        console.log(event.target.id);
 //        if (!((scope.answer).val)) return;
 
-        var ans = scope.answer;
+        var ans = event.target.id;
 
         if (ans == scope.options[scope.correct]) {
           scope.score++;
@@ -77,6 +78,11 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
       question: "Who starred in Click?",
       options: ["Adam Sandler", "Saddam Andler", "Adam Chandler"],
       correct: 0
+    },
+    {
+      question: "Was Christopher Walken in that movie or am I thinking of Billy Crystal?",
+      options: ["I don't think either of them were in the movie Click starring Adam Sandler.", "Yeah...I think he was in it", "No, wait, that was Billy Crystal."],
+      correct: 1
     }
   ];
 

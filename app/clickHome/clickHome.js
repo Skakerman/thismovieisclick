@@ -10,12 +10,12 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
 }])
 
 .controller('ClickHomeCtrl', ['$scope', function ($scope) {
-  $scope.myInterval = 300;
+  $scope.myInterval = 1000;
   $scope.noWrapSlides = false;
   var slides = $scope.slides = [];
   $scope.addSlide = function () {
     slides.push({
-      image: 'assets/click'+i+'.jpg',
+      image: 'assets/click' + i + '.jpg',
       text: 'This Movie is Click!'
     });
   };
