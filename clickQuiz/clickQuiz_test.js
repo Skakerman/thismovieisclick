@@ -1,0 +1,2 @@
+/*! thisMovieIsClick 2015-11-14 */
+"use strict";describe("clickApp.clickQuiz module",function(){beforeEach(module("clickApp.clickQuiz")),describe("clickQuiz controller",function(){it("should ....",inject(function(a){var b=a("ClickQuizCtrl");expect(b).toBeDefined()}))})});

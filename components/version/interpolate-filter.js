@@ -1,0 +1,2 @@
+/*! thisMovieIsClick 2015-11-14 */
+"use strict";angular.module("clickApp.version.interpolate-filter",[]).filter("interpolate",["version",function(a){return function(b){return String(b).replace(/\%VERSION\%/gm,a)}}]);

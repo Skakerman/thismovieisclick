@@ -1,0 +1,2 @@
+/*! thisMovieIsClick 2015-11-14 */
+"use strict";angular.module("clickApp",["ngRoute","clickApp.clickHome","clickApp.clickQuiz","clickApp.clickFacts","clickApp.version","clickApp.header"]).config(["$routeProvider",function(a){a.otherwise({redirectTo:"/clickHome"})}]);

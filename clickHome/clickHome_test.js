@@ -1,0 +1,2 @@
+/*! thisMovieIsClick 2015-11-14 */
+"use strict";describe("clickApp.clickHome module",function(){beforeEach(module("clickApp.clickHome")),describe("clickHome controller",function(){it("should ....",inject(function(a){a("ClickHomeCtrl");expect(ClickHomeCtrl).toBeDefined()}))})});
