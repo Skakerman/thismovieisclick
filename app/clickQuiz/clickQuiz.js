@@ -21,6 +21,7 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
     link: function (scope, elem, attrs) {
       scope.start = function () {
         debugger;
+        scope.score = 0;
         scope.id = 0;
         scope.quizOver = false;
         scope.inProgress = true;
@@ -42,10 +43,7 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
 
       scope.checkAnswer = function () {
         debugger;
-        // TODO: This doesn't work, scope.answer is reading the value from the 
-        // JSON for the question set. Not what is input
         console.log(event.target.id);
-//        if (!((scope.answer).val)) return;
 
         var ans = event.target.id;
 
