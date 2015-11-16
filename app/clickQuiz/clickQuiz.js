@@ -9,32 +9,29 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
   });
 }])
 
-.controller('ClickQuizCtrl', [function () {
+.controller('ClickQuizCtrl', function () {
+})
 
-}])
-
-.directive('quiz', function (quizFactory) {
+.directive('quiz', ['quizFactory', function (quizFactory) {
   return {
     restrict: 'AE',
     scope: {},
     templateUrl: 'clickQuiz/partial-quiz.html',
     link: function (scope, elem, attrs) {
       scope.start = function () {
-        debugger;
         scope.score = 0;
         scope.id = 0;
         scope.quizOver = false;
         scope.inProgress = true;
+        scope.totQs = quizFactory.totQs();
         scope.getQuestion();
       };
 
       scope.getQuestion = function () {
-        var q = quizFactory.getQuestion(scope.id);
-        if (q) {
-          debugger;;
-          scope.question = q.question;
-          scope.options = q.options;
-          scope.correct = q.correct;
+        if (scope.id < scope.totQs) {
+          scope.question = quizFactory.ques(scope.id);
+          scope.options = quizFactory.opts(scope.id);
+          scope.correct = quizFactory.correct(scope.id);
           scope.answerMode = true;
         } else {
           scope.quizOver = true;
@@ -42,7 +39,6 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
       };
 
       scope.checkAnswer = function () {
-        debugger;
         console.log(event.target.id);
 
         var ans = event.target.id;
@@ -60,37 +56,42 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
       scope.nextQuestion = function () {
         scope.id++;
         scope.getQuestion();
-      }
+      };
 
       scope.reset = function () {
         scope.score = 0;
         scope.inProgress = false;
-      }
+      };
     }
   }
-})
+}])
 
-.factory('quizFactory', function () {
-  var questions = [
-    {
-      question: "Who starred in Click?",
-      options: ["Adam Sandler", "Saddam Andler", "Adam Chandler"],
-      correct: 0
-    },
-    {
-      question: "Was Christopher Walken in that movie or am I thinking of Billy Crystal?",
-      options: ["I don't think either of them were in the movie Click starring Adam Sandler.", "Yeah...I think he was in it", "No, wait, that was Billy Crystal."],
-      correct: 1
-    }
-  ];
-
+.factory('quizFactory', ['$http', function ($http) {
+  var questions = null;
+  $http.get('clickQuiz/quizQs.json')
+    .success(function (response) {
+      questions = response;
+    })
+    .error(function () {
+      questions = [{
+        question: "BROKEN",
+        options: ["BROEKN", "BORKEN", "BRICKEN"],
+        correct: 0
+      }]
+    });
   return {
-    getQuestion: function (id) {
-      if (id < questions.length) {
-        return questions[id];
-      } else {
-        return false;
-      }
+    ques: function (id) {
+      return questions[id].question;
+    },
+    opts: function (id) {
+      return questions[id].options;
+    },
+    correct: function (id) {
+      return questions[id].correct;
+    },
+    totQs: function () {
+      return questions.length;
     }
   };
-});
+
+}]);
