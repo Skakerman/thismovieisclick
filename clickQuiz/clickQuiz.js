@@ -1,2 +1,97 @@
-/*! thisMovieIsClick 2015-11-14 */
-"use strict";angular.module("clickApp.clickQuiz",["ngRoute"]).config(["$routeProvider",function(a){a.when("/clickQuiz",{templateUrl:"clickQuiz/clickQuiz.html",controller:"ClickQuizCtrl"})}]).controller("ClickQuizCtrl",[function(){}]).directive("quiz",function(a){return{restrict:"AE",scope:{},templateUrl:"clickQuiz/partial-quiz.html",link:function(b,c,d){b.start=function(){b.score=0,b.id=0,b.quizOver=!1,b.inProgress=!0,b.getQuestion()},b.getQuestion=function(){var c=a.getQuestion(b.id);c?(b.question=c.question,b.options=c.options,b.correct=c.correct,b.answerMode=!0):b.quizOver=!0},b.checkAnswer=function(){console.log(event.target.id);var a=event.target.id;a==b.options[b.correct]?(b.score++,b.correctAns=!0):b.correctAns=!1,b.answerMode=!1},b.nextQuestion=function(){b.id++,b.getQuestion()},b.reset=function(){b.score=0,b.inProgress=!1}}}}).factory("quizFactory",function(){var a=[{question:"Who starred in Click?",options:["Adam Sandler","Saddam Andler","Adam Chandler"],correct:0},{question:"Was Christopher Walken in that movie or am I thinking of Billy Crystal?",options:["I don't think either of them were in the movie Click starring Adam Sandler.","Yeah...I think he was in it","No, wait, that was Billy Crystal."],correct:1}];return{getQuestion:function(b){return b<a.length?a[b]:!1}}});
+'use strict';
+
+angular.module('clickApp.clickQuiz', ['ngRoute'])
+
+.config(['$routeProvider', function ($routeProvider) {
+  $routeProvider.when('/clickQuiz', {
+    templateUrl: 'clickQuiz/clickQuiz.html',
+    controller: 'ClickQuizCtrl'
+  });
+}])
+
+.controller('ClickQuizCtrl', function () {
+})
+
+.directive('quiz', ['quizFactory', function (quizFactory) {
+  return {
+    restrict: 'AE',
+    scope: {},
+    templateUrl: 'clickQuiz/partial-quiz.html',
+    link: function (scope, elem, attrs) {
+      scope.start = function () {
+        scope.score = 0;
+        scope.id = 0;
+        scope.quizOver = false;
+        scope.inProgress = true;
+        scope.totQs = quizFactory.totQs();
+        scope.getQuestion();
+      };
+
+      scope.getQuestion = function () {
+        if (scope.id < scope.totQs) {
+          scope.question = quizFactory.ques(scope.id);
+          scope.options = quizFactory.opts(scope.id);
+          scope.correct = quizFactory.correct(scope.id);
+          scope.answerMode = true;
+        } else {
+          scope.quizOver = true;
+        }
+      };
+
+      scope.checkAnswer = function () {
+        console.log(event.target.id);
+
+        var ans = event.target.id;
+
+        if (ans == scope.options[scope.correct]) {
+          scope.score++;
+          scope.correctAns = true;
+        } else {
+          scope.correctAns = false;
+        }
+
+        scope.answerMode = false;
+      };
+
+      scope.nextQuestion = function () {
+        scope.id++;
+        scope.getQuestion();
+      };
+
+      scope.reset = function () {
+        scope.score = 0;
+        scope.inProgress = false;
+      };
+    }
+  }
+}])
+
+.factory('quizFactory', ['$http', function ($http) {
+  var questions = null;
+  $http.get('clickQuiz/quizQs.json')
+    .success(function (response) {
+      questions = response;
+    })
+    .error(function () {
+      questions = [{
+        question: "BROKEN",
+        options: ["BROEKN", "BORKEN", "BRICKEN"],
+        correct: 0
+      }]
+    });
+  return {
+    ques: function (id) {
+      return questions[id].question;
+    },
+    opts: function (id) {
+      return questions[id].options;
+    },
+    correct: function (id) {
+      return questions[id].correct;
+    },
+    totQs: function () {
+      return questions.length;
+    }
+  };
+
+}]);

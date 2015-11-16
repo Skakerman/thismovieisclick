@@ -1,2 +1,0 @@
-/*! thisMovieIsClick 2015-11-14 */
-"use strict";describe("clickApp.version module",function(){beforeEach(module("clickApp.version")),describe("interpolate filter",function(){beforeEach(module(function(a){a.value("version","TEST_VER")})),it("should replace VERSION",inject(function(a){expect(a("before %VERSION% after")).toEqual("before TEST_VER after")}))})});
