@@ -12,9 +12,10 @@
 <!--    <button ng-click="checkAnswer()" class="btn btn-primary" ng-show="answerMode">Submit</button>-->
 
     <div ng-show="!answerMode">
-      <button ng-click="nextQuestion()" class="next-question btn btn-primary">Quiz on!</button>
       <span ng-show="correctAns">That is correct!</span>
       <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}".</span>
+      <br/>
+      <button ng-click="nextQuestion()" class="next-question btn btn-primary">Quiz on!</button>
     </div>
 
   </div>

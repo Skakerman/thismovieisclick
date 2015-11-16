@@ -12,8 +12,10 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="app.css">
   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
 
@@ -21,17 +23,26 @@
 
 <body>
 
-  <div class="navbar navbar-default" role="navigation">
-    <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="#">Click!</a>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/clickHome">Click!</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+<!--          <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>-->
+          <li ng-class="{ active: isActive('#/clickQuiz')}"><a href="#/clickQuiz">Click Quiz</a></li>
+          <li ng-class="{ active: isActive('#/clickFacts')}"><a href="#/clickFacts">Click Facts</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>
-      <li ng-class="{ active: isActive('#/clickQuiz')}"><a href="#/clickQuiz">Click Quiz</a></li>
-      <li ng-class="{ active: isActive('#/clickFacts')}"><a href="#/clickFacts">Click Facts</a></li>
-    </ul>
-  </div>
-
+  </nav>
+  
   <div ng-view></div>
 
   <script src="app.js"></script>

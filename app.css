@@ -1,5 +1,4 @@
 /* app css stylesheet */
-
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -72,7 +71,7 @@
 }
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #ecf0f1;
+  border-color: rgb(59, 95, 137);
 }
 .navbar-default .navbar-link {
   color: #ecf0f1;
