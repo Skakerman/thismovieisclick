@@ -1,0 +1,35 @@
+<div class="quiz-area" ng-show="inProgress">
+  <div ng-show="!quizOver">
+    <h2 id="question">{{question}}</h2>
+    <ul id="options" ng-repeat="option in options">
+<!--      <li ng-repeat="option in options">-->
+        <label>
+          <input type="button" class="btn btn-primary" name="answer" id="{{option}}" value="{{option}}" ng-model="$parent.quiz" data-ng-click="checkAnswer($event)" ng-disabled="!answerMode">
+        </label>
+<!--      </li>-->
+    </ul>
+
+<!--    <button ng-click="checkAnswer()" class="btn btn-primary" ng-show="answerMode">Submit</button>-->
+
+    <div ng-show="!answerMode">
+      <button ng-click="nextQuestion()" class="next-question btn btn-primary">Quiz on!</button>
+      <span ng-show="correctAns">That is correct!</span>
+      <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}".</span>
+    </div>
+
+  </div>
+
+  <div ng-show="quizOver">
+    <h2>Quiz over!</h2>
+    <button class="btn btn-primary" ng-click="reset()">Click the rewind button on the magic remote that Adam Sandler has in the movie Click to play again!</button>
+  </div>
+</div>
+
+<div class="intro" ng-show="!inProgress">
+  <p>Click!</p>
+  <button id="startQuiz" class="btn btn-primary" ng-click="start()">Click 'Play' on the magic remote that Adam Sandler has in the movie Click to start the quiz!</button>
+</div>
+
+<div id="score">
+  Score: {{score}}
+</div>

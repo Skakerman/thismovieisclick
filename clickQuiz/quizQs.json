@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Who starred in Click?",
+    "options": ["Adam Sandler", "Saddam Andler", "Adam Chandler"],
+    "correct": 0
+  },
+  {
+    "question": "Was Christopher Walken in that movie or am I thinking of Billy Crystal?",
+    "options": ["I don't think either of them were in the movie Click starring Adam Sandler", "Yeah...I think he was in it", "No, wait, that was Billy Crystal"],
+    "correct": 1
+  },
+  {
+    "question": "Is this JSON file being loaded?",
+    "options": ["Yes", "No", "Hopefully"],
+    "correct": 0
+  },
+  {
+    "question": "When was Click released?",
+    "options": ["2004", "1999", "2006"],
+    "correct": 2
+  },
+  {
+    "question": "How many Oscars was Click nominated for?",
+    "options": ["0", "1", "5"],
+    "correct": 1
+  },
+  {
+    "question": "Wait, what? Click was nominated for an Oscar?",
+    "options": ["Yeah but it was for makeup", "No way", "That has to be a lie"],
+    "correct": 0
+  }
+]
