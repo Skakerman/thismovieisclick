@@ -6,8 +6,6 @@ angular.module('clickApp', [
   'clickApp.clickHome',
   'clickApp.clickQuiz',
   'clickApp.clickFacts',
-  'clickApp.version',
-  'clickApp.header'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/clickHome'});
