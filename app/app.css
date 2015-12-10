@@ -1,37 +1,60 @@
 /* app css stylesheet */
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
 
 .blue{
   color: #3d81ee;
 }
 
+.navbar{
+	background-color:#3d81ee;
+	box-shadow:0 1px 1px #ccc;
+	border-radius:2px;
+}
+
+.navbar a{
+	display:inline-block;
+	padding: 18px 30px;
+	color:#fff !important;
+	font-weight:bold;
+	font-size:16px;
+	text-decoration:none !important;
+	line-height:1;
+	text-transform: uppercase;
+	background-color:transparent;
+
+	-webkit-transition:background-color 0.25s;
+	-moz-transition:background-color 0.25s;
+	transition:background-color 0.25s;
+}
+
+md-sidenav  {
+  height:100%;
+  background-color: #3d81ee;
+}
+
+md-content {
+  background-color : #fff;
+  height:100%;
+  padding:20px;
+}
+
+.navBtn {
+  padding:0 0 0 0;
+  text-align: center;
+  padding: 0 0px 0 0px;
+  margin: 0px 0px 0px 0px;
+  border-radius: 0px;
+}
+
+.navBtn:hover {
+  background-color: #123456;
+}
+
+.clickSide {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
 .navbar-default {
   background-color: #3d81ee;
   border-color: #2d62b6;
@@ -96,4 +119,4 @@
 .carousel-control.left, .carousel-control.right {
    background-image:none !important;
    filter:none !important;
-}
+}*/

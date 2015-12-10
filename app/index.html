@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="clickApp" class="no-js">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -9,21 +9,71 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!--
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+-->
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.js"></script>
+
+  <!--
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css">
+  <!--  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
   <link rel="stylesheet" href="app.css">
-  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+  <!--  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>-->
 
 </head>
 
-<body>
+<body ng-app="clickApp" layout="row" ng-cloak>
 
-  <nav class="navbar navbar-default" role="navigation">
+  <md-sidenav layout="column" class="md-sidenav-left" md-is-locked-open='true'>
+    <md-toolbar>
+      <md-button class="md-primary" ng-href="#/clickHome">
+        <h1>Click!</h1>
+      </md-button>
+    </md-toolbar>
+
+    <section flex layout="column" layout-sm="column" layout-align="center">
+      <md-button class="navBtn" ng-href="#/clickQuiz">Quiz</md-button>
+      <md-button class="navBtn" ng-href="#/clickFacts">Facts</md-button>
+    </section>
+  </md-sidenav>
+
+  <div layout="column" layout-fill>
+    <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span flex></span>
+      <span>This Movie is Click!</span>      
+<!--
+      <md-button>
+        Right Bar Button
+      </md-button>
+-->
+    </div>  
+    </md-toolbar>
+    <ng-view>
+    View Content
+  </ng-view>
+  </div>
+  
+  <script src="app.js"></script>
+  <script src="clickHome/clickHome.js"></script>
+  <script src="clickQuiz/clickQuiz.js"></script>
+  <script src="clickFacts/clickFacts.js"></script>
+
+  <!--
+  <nav class="{{active}}" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,7 +85,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-<!--          <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>-->
+          <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>
           <li ng-class="{ active: isActive('#/clickQuiz')}"><a href="#/clickQuiz">Click Quiz</a></li>
           <li ng-class="{ active: isActive('#/clickFacts')}"><a href="#/clickFacts">Click Facts</a></li>
         </ul>
@@ -49,6 +99,7 @@
   <script src="clickHome/clickHome.js"></script>
   <script src="clickQuiz/clickQuiz.js"></script>
   <script src="clickFacts/clickFacts.js"></script>
+-->
 
 </body>
 

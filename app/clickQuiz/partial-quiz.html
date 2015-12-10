@@ -2,35 +2,29 @@
   <div ng-show="!quizOver">
     <h2 id="question">{{question}}</h2>
     <ul id="options" ng-repeat="option in options">
-<!--      <li ng-repeat="option in options">-->
-        <label>
-          <input type="button" class="btn btn-primary" name="answer" id="{{option}}" value="{{option}}" ng-model="$parent.quiz" data-ng-click="checkAnswer($event)" ng-disabled="!answerMode">
-        </label>
-<!--      </li>-->
+      <md-button class="md-primary md-raised" name="answer" id="{{option}}" value="{{option}}" ng-model="$parent.quiz" ng-click="checkAnswer(option)" ng-disabled="!answerMode" flex>{{option}}</md-button>
     </ul>
-
-<!--    <button ng-click="checkAnswer()" class="btn btn-primary" ng-show="answerMode">Submit</button>-->
 
     <div ng-show="!answerMode">
       <span ng-show="correctAns">That is correct!</span>
       <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}".</span>
       <br/>
-      <button ng-click="nextQuestion()" class="next-question btn btn-primary">Quiz on!</button>
+      <md-button class="md-raised md-primary" ng-click="nextQuestion()" class="next-question btn btn-primary">Quiz on!</button>
     </div>
 
   </div>
 
   <div ng-show="quizOver">
     <h2>Quiz over!</h2>
-    <button class="btn btn-primary" ng-click="reset()">Click the rewind button on the magic remote that Adam Sandler has in the movie Click to play again!</button>
+    <md-button class="md-raised md-primary" ng-click="reset()">Click the rewind button on the magic remote that Adam Sandler has in the movie Click to play again!</button>
   </div>
 </div>
 
 <div class="intro" ng-show="!inProgress">
   <p>Click!</p>
-  <button id="startQuiz" class="btn btn-primary" ng-click="start()">Click 'Play' on the magic remote that Adam Sandler has in the movie Click to start the quiz!</button>
+  <md-button id="startQuiz" class="md-raised md-primary" ng-click="start()">Click 'Play' on the magic remote that Adam Sandler has in the movie Click to start the quiz!</button>
 </div>
 
-<div id="score">
+<div id="score" ng-show="inProgress || quizOver">
   Score: {{score}}
 </div>

@@ -20,34 +20,15 @@ module.exports = function (grunt) {
       }
     },
 
-//    browserify: {
-//      build: {
-//        options: {
-//          alias: alias.map(grunt, {
-//
-//            // alias all js files in the 'build' directory 
-//            cwd: "build/",
-//            src: ["**/*.js", "!**/*.min.js"],
-//            dest: ""
-//          })
-//        },
-//
-//        src: "app/app.js",
-//        dest: "build/app.js"
-//      }
-//    },
-
     uglify: {
       build: {
         options: {
           mangle: false,
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
         },
-        files: [{
-          expand: true,
-          src: 'app/**/*.js',
-          dest: 'build/'
-        }]
+        files: {
+          'build/app.min.js': ['build/**/*.js']
+        }
       }
     }
   });
@@ -56,10 +37,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-browserify');
-  grunt.loadNpmTasks('browserify-alias-grunt');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean:build', 'copy', 'uglify']);
+  grunt.registerTask('default', ['clean:build', 'copy']);
 
 };
