@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clickApp.clickQuiz', ['ngRoute'])
+angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
 
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/clickQuiz', {
@@ -38,12 +38,10 @@ angular.module('clickApp.clickQuiz', ['ngRoute'])
         }
       };
 
-      scope.checkAnswer = function () {
-        console.log(event.target.id);
+      scope.checkAnswer = function (choice) {
+        console.log("Choice: " + choice);
 
-        var ans = event.target.id;
-
-        if (ans == scope.options[scope.correct]) {
+        if (choice == scope.options[scope.correct]) {
           scope.score++;
           scope.correctAns = true;
         } else {

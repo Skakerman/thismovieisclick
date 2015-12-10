@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ui.bootstrap'])
+angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/clickHome', {
