@@ -12,6 +12,7 @@
     "angular-mocks": "~1.4.0",
     "html5-boilerplate": "~5.2.0",
     "angular-animate": "*",
-    "angular-bootstrap": "*"
+    "angular-bootstrap": "*",
+    "angular-hamburger-toggle": "~0.2.0"
   }
 }
