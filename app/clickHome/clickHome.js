@@ -9,18 +9,7 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
   });
 }])
 
+//TODO: Eventually make this responsive
 .controller('ClickHomeCtrl', ['$scope', function ($scope) {
-  $scope.myInterval = 1000;
-  $scope.noWrapSlides = false;
-  var slides = $scope.slides = [];
-  $scope.addSlide = function () {
-    slides.push({
-      image: 'assets/click' + i + '.jpg',
-      text: 'This Movie is Click!'
-    });
-  };
-  for (var i = 0; i < 7; i++) {
-    $scope.addSlide();
-  }
-
+  $scope.grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 }]);
