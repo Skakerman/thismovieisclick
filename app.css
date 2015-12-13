@@ -1,48 +1,54 @@
 /* app css stylesheet */
 
-.blue{
+.blue {
   color: #3d81ee;
 }
 
-.navbar{
-	background-color:#3d81ee;
-	box-shadow:0 1px 1px #ccc;
-	border-radius:2px;
-}
-
-.navbar a{
-	display:inline-block;
-	padding: 18px 30px;
-	color:#fff !important;
-	font-weight:bold;
-	font-size:16px;
-	text-decoration:none !important;
-	line-height:1;
-	text-transform: uppercase;
-	background-color:transparent;
-
-	-webkit-transition:background-color 0.25s;
-	-moz-transition:background-color 0.25s;
-	transition:background-color 0.25s;
-}
-
-md-sidenav  {
-  height:100%;
+.navbar {
   background-color: #3d81ee;
+  box-shadow: 0 1px 1px #ccc;
+  border-radius: 2px;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 18px 30px;
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none !important;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: transparent;
+  -webkit-transition: background-color 0.25s;
+  -moz-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+md-sidenav {
+  height: 100%;
+  background-color: #3d81ee;
+/*  min-width: 100px !important;*/
+  width: 11vw !important;
+/*  max-width: 100px !important;*/
+  
 }
 
 md-content {
-  background-color : #fff;
-  height:100%;
-  padding:20px;
+  background-color: #fff;
+  height: 100%;
 }
 
 .navBtn {
-  padding:0 0 0 0;
+  padding: 0 0 0 0;
   text-align: center;
   padding: 0 0px 0 0px;
   margin: 0px 0px 0px 0px;
   border-radius: 0px;
+  font-size: 16px;
+  
+  color: #fff;
+  line-height: 3;
 }
 
 .navBtn:hover {
@@ -53,6 +59,7 @@ md-content {
   padding-left: 0;
   padding-right: 0;
 }
+
 
 /*
 .navbar-default {
