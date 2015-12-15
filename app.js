@@ -7,7 +7,7 @@ angular.module('clickApp', [
   'clickApp.clickHome',
   'clickApp.clickQuiz',
   'clickApp.clickFacts',
-  'ngHamburger'
+  'ngMdIcons'
 ])
 
 .config(['$routeProvider', function ($routeProvider) {

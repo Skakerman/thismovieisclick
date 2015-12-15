@@ -19,10 +19,9 @@
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.js"></script>
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css">
-  
-  <!--  Hamburger toggle -->
-  <script src="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.min.js"></script>
-  <link rel="stylesheet" href="bower_components/angular-hamburger-toggle/dist/angular-hamburger-toggle.min.css">
+
+  <!--  Material Icons -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
 
   <!-- TODO: Angular Grid for clickHome to make a responsive image grid -->
   <!--  <script src="assets/angulargrid.js"></script>-->
@@ -34,36 +33,56 @@
 
 <body ng-controller="AppCtrl" ng-app="clickApp" layout="row" ng-cloak>
 
-  <!--
-  <md-sidenav layout="column" class="md-sidenav-left" md-is-locked-open='true'>
-    <md-toolbar>
-      <md-button class="md-primary" ng-href="#/clickHome">
-        <h1>Click!</h1>
-      </md-button>
-    </md-toolbar>
+  <div layout="row" layout-fill>
+    <md-sidenav layout="column" class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-fill>
+      <!--      There's got to be a better way to center this button -->
+      <section layout="column" layout-align="center center">
+        <md-button class="md-icon-button navBtn" ng-click="toggleLeft()" hide-gt-md>
+          <ng-md-icon icon="menu" style="fill: #fff"></ng-md-icon>
+        </md-button>
+      </section>
+      <section layout="column" layout-align="stretch center">
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickHome">Home</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickQuiz">Quiz</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickFacts">Facts</md-button>
+      </section>
+    </md-sidenav>
+    <div layout="column" layout-fill flex>
+      <md-toolbar>
+        <div class="md-toolbar-tools navbar" layout="row" layout-fill>
+          <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
+            <ng-md-icon icon="menu" style="fill: #fff" layout-align="center center"></ng-md-icon>
+          </md-button>
+          <span flex></span>This Movie is Click!
+        </div>
+      </md-toolbar>
+      <ng-view>
+        View Content
+      </ng-view>
+    </div>
+  </div>
 
-    <section flex layout="column" layout-sm="column" layout-align="center">
-      <md-button class="navBtn" ng-href="#/clickQuiz">Quiz</md-button>
-      <md-button class="navBtn" ng-href="#/clickFacts">Facts</md-button>
-    </section>
-  </md-sidenav>
--->
+
 
   <!--  Arrange everything underneath the navbar -->
+  <!--
   <div layout="column" layout-fill>
     <md-toolbar>
-      <div class="md-toolbar-tools" layout="row">
-        <hamburger-toggle state="tgState" ng-click="toggleLeft()" class="hamburger-toggle" hide-gt-md></hamburger-toggle>
+      <div class="md-toolbar-tools navbar" layout="row">
+        <ng-md-icon icon="menu" ng-click="toggleLeft()" style="fill: #fff" hide-gt-md></ng-md-icon>
+        <span flex></span>
+         Change to displaying unique message based on page 
         This Movie is Click!
-<!--        <span flex></span>-->
       </div>
     </md-toolbar>
+-->
 
-    <!-- Arrange the sidenav and content side-by-side -->
+  <!-- Arrange the sidenav and content side-by-side -->
+  <!--
     <div layout="row" layout-fill>
-      <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-fill>
+      <md-sidenav layout="column" class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-fill>
         <section flex layout="column" layout-align="center">
-          <hamburger-toggle state="tgState" ng-click="toggleLeft()" class="hamburger-toggle" hide-gt-md></hamburger-toggle>
+          <ng-md-icon icon="menu" ng-click="toggleLeft()" style="fill: #fff" hide-gt-md></ng-md-icon>
           <md-button class="navBtn" ng-href="#/clickHome">Home</md-button>
           <md-button class="navBtn" ng-href="#/clickQuiz">Quiz</md-button>
           <md-button class="navBtn" ng-href="#/clickFacts">Facts</md-button>
@@ -74,40 +93,12 @@
       </ng-view>
     </div>
   </div>
-
-  <script src="app.js"></script>
-  <script src="clickHome/clickHome.js"></script>
-  <script src="clickQuiz/clickQuiz.js"></script>
-  <script src="clickFacts/clickFacts.js"></script>
-
-  <!--
-  <nav class="{{active}}" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#/clickHome">Click!</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li ng-class="{ active: isActive('#/clickHome')}"><a href="#/clickHome">Home</a></li>
-          <li ng-class="{ active: isActive('#/clickQuiz')}"><a href="#/clickQuiz">Click Quiz</a></li>
-          <li ng-class="{ active: isActive('#/clickFacts')}"><a href="#/clickFacts">Click Facts</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
-  <div ng-view></div>
-
-  <script src="app.js"></script>
-  <script src="clickHome/clickHome.js"></script>
-  <script src="clickQuiz/clickQuiz.js"></script>
-  <script src="clickFacts/clickFacts.js"></script>
 -->
+
+  <script src="app.js"></script>
+  <script src="clickHome/clickHome.js"></script>
+  <script src="clickQuiz/clickQuiz.js"></script>
+  <script src="clickFacts/clickFacts.js"></script>
 
 </body>
 
