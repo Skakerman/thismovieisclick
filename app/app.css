@@ -5,9 +5,8 @@
 }
 
 .navbar {
-  background-color: #3d81ee;
-  box-shadow: 0 1px 1px #ccc;
-  border-radius: 2px;
+  background-color: #154698;
+/*  box-shadow: 0 1px 1px #ccc;*/
 }
 
 .navbar a {
@@ -25,16 +24,25 @@
   transition: background-color 0.25s;
 }
 
+md-icon .material-icons {
+  display: block !important;
+  color: black;
+}
+
 md-sidenav {
   height: 100%;
   background-color: #3d81ee;
   min-width: 150px !important;
   width: 11vw !important;
-/*  overflow: hidden;*/
+  /*  overflow: hidden;*/
   position: fixed;
-  top: 65px;
+  /*  top: 65px;*/
   bottom: 0;
   /*  max-width: 100px !important;*/
+}
+
+.md-sidenav-backdrop {
+  opacity: 0 !important;
 }
 
 md-content {
@@ -43,23 +51,35 @@ md-content {
 }
 
 .navBtn {
-  padding: 0 0 0 0;
+  min-height: 64px;
+  padding: 0px;
   text-align: center;
-  padding: 0 0px 0 0px;
   margin: 0px 0px 0px 0px;
   border-radius: 0px;
   font-size: 16px;
   color: #fff;
-  line-height: 3;
+  line-height: 4;
 }
 
 .navBtn:hover {
-  background-color: #123456;
+/*  background-color: #123456;*/
 }
 
 .clickSide {
   padding-left: 0;
   padding-right: 0;
+}
+
+.quizBtn {
+  background-color: #3d81ee;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.quizBtn:not([disabled]):hover {
+  /* Should probably change this at some point */
+  background-color: #123456;
 }
 
 
