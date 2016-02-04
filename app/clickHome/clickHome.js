@@ -3,7 +3,7 @@
 angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 
 .config(['$routeProvider', function ($routeProvider) {
-  $routeProvider.when('/clickHome', {
+  $routeProvider.when('/', {
     templateUrl: 'clickHome/clickHome.html',
     controller: 'ClickHomeCtrl'
   });

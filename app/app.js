@@ -12,7 +12,7 @@ angular.module('clickApp', [
 
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider.otherwise({
-    redirectTo: '/clickHome'
+    redirectTo: '/'
   });
 }])
 
