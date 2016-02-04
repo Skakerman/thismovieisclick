@@ -1,9 +1,41 @@
 <!--TODO: Change this to infinite scrolling-->
 
+<!--
 <div ng-controller="ClickHomeCtrl" id="click_home" flex ng-cloak>
   <div ng-repeat="row in grid" layout="row" >
     <div ng-repeat="item in row" flex="auto">
       <img ng-src="assets/click{{item}}.jpg" height="400" width="400" flex="auto" />
     </div>
   </div>
+</div>-->
+
+<div ng-controller="ClickHomeCtrl as pictures" id="click_home" flex ng-cloak>
+  <section class="catalog" layout layout-wrap layout-align="center">
+    <md-card ng-repeat="it in pictures.catalog" flex="22" flex-sm="46" flex-xs="80">
+      <img src="{{ it.imageURL }}"></img>
+<!--
+      <md-card-footer-text layout="column">
+        <span class="md-title">{{it.title}} </span>
+        <span class="md-subhead">{{it.price}}</span>
+      </md-card-footer-text>
+-->
+    </md-card>
+  </section>
 </div>
+
+<!--
+<div ng-controller="ClickHomeCtrl" id="click_home" flex ng-cloak>
+  <section class="catalog" layout layout-wrap layout-align="center">
+    <md-card ng-repeat="it in pictures.catalog" flex="22" flex-sm="46" flex-xs="80">
+      <img src="{{it.imageURL}}"</img>
+    </md-card>
+    <div ng-repeat="row in grid" layout="row">
+      <div ng-repeat="item in grid">
+        <md-card ng-repeat="item in grid">
+          <img src="assets/click{{item}}.jpg"></img>
+        </md-card>
+      </div>
+    </div>
+  </section>
+</div>
+-->

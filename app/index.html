@@ -17,8 +17,8 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
   <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.js"></script>
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc5/angular-material.min.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css">
 
   <!--  Material Icons -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
@@ -47,7 +47,7 @@
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickFacts">Facts</md-button>
       </section>
     </md-sidenav>
-    <div layout="column" layout-fill flex>
+    <section layout="column" role="main" flex>
       <md-toolbar>
         <div class="md-toolbar-tools navbar" layout="row" layout-fill>
           <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
@@ -56,10 +56,15 @@
           <span flex></span>This Movie is Click!
         </div>
       </md-toolbar>
-      <ng-view>
-        View Content
-      </ng-view>
-    </div>
+      <section id="content" role="content" layout="column" layout-padding md-scroll-y>
+        <md-content class="md-whiteframe-z2" ng-cloak>
+          <ng-view>
+            View Content
+          </ng-view>
+        </md-content>
+      </section>
+    </section>
+  </div>
   </div>
 
 
