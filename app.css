@@ -1,5 +1,18 @@
 /* app css stylesheet */
 
+body {
+  overflow: hidden;
+  background-color: #f6f6f6;
+}
+
+md-whiteframe {
+  background: #fff;
+}
+
+#content {
+  padding: 24px;
+}
+
 .blue {
   color: #3d81ee;
 }
