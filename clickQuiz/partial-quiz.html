@@ -16,13 +16,15 @@
 
   <div ng-show="quizOver">
     <h2>Quiz over!</h2>
-    <md-button class="quizBtn" ng-click="reset()">Click the rewind button on the magic remote that Adam Sandler has in the movie Click to play again!</button>
+    <p>Click the rewind button on the magic remote that Adam Sandler has in the movie Click to play again!</p>
+    <md-button class="quizBtn" ng-click="reset()">Rewind</button>
   </div>
 </div>
 
 <div class="intro" ng-show="!inProgress">
   <p>Click!</p>
-  <md-button id="startQuiz" class="quizBtn" ng-click="start()">Click 'Play' on the magic remote that Adam Sandler has in the movie Click to start the quiz!</button>
+  <p>Click 'Play' on the magic remote that Adam Sandler has in the movie Click to start the quiz!</p>
+  <md-button id="startQuiz" class="quizBtn" ng-click="start()">Play</button>
 </div>
 
 <div id="score" ng-show="inProgress || quizOver">

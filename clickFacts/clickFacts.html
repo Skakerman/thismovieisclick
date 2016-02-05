@@ -1,7 +1,16 @@
-<p>
-  <ul>
-    <li>Best.</li>
-    <li>Movie.</li>
-    <li>Ever.</li>
-  </ul>
-</p>
+<div ng-controller="ClickFactsCtrl as facts" id="click_facts" ng-cloak layout-wrap>
+  <section class="factSheet" layout="row" layout-wrap layout-align="center">
+    <div class="flip" layout="row" layout-wrap>
+      <md-card class="factCard" ng-repeat="it in facts.triviaCollection"
+               ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"
+               flex="22" ng-cloak>
+        <div class="face front image-container">
+          <img src="{{ it.imageURL }}" />
+        </div>
+        <div class="face back">
+          Click stars Adam Sandler!
+        </div>
+      </md-card>
+    </div>
+  </section>
+</div>

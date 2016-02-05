@@ -3,7 +3,7 @@
 angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 
 .config(['$routeProvider', function ($routeProvider) {
-  $routeProvider.when('/clickHome', {
+  $routeProvider.when('/', {
     templateUrl: 'clickHome/clickHome.html',
     controller: 'ClickHomeCtrl'
   });
@@ -16,6 +16,7 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 //}])
 
 .controller('ClickHomeCtrl', function ($pictures) {
+  debugger;
   this.filterBy = "All Pictures";
   this.sortedBy = "Featured";
   this.availableFilters = $pictures.availableFilters;
@@ -24,6 +25,7 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 })
 
 .factory('$pictures', function () {
+  debugger;
   return {
     availableFilters: ["Adam Sandler", "Remote", "Jack Black"],
     availableSorts: ["Featured", "Best Selling", "Alphabetically, A-Z", "Alphabetically, Z-A", "Price, low to high", "Price, high to low", "Date, new to old", "Date, old to new"],
@@ -38,7 +40,7 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
         price: "$99.99"
       }
 
-    for (var j = 1; j <= 9; j++) {
+    for (var j = 0; j <= 9; j++) {
       master.imageURL = 'assets/click' + j + '.jpg';
       debugger;
       list.push(angular.extend({}, master));
