@@ -9,6 +9,25 @@ angular.module('clickApp.clickFacts', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('ClickFactsCtrl', [function () {
+.controller('ClickFactsCtrl', function ($facts) {
+  this.triviaCollection = $facts.trivia;
+})
 
-}]);
+.factory('$facts', function () {
+  return {
+    trivia: loadPictures()
+  };
+
+  function loadPictures() {
+    var list = [],
+      master = {
+        imageURL: "assets/clickFact.jpg",
+      }
+
+    for (var j = 0; j < 14; j++) {
+      list.push(angular.extend({}, master));
+    }
+    return list;
+  }
+
+});
