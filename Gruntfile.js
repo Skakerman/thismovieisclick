@@ -4,6 +4,12 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    'gh-pages': {
+      options: {
+        base: 'build'
+      },
+      src: ['**/*']
+    },
 
     copy: {
       build: {
@@ -37,6 +43,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Default task(s).
   grunt.registerTask('default', ['clean:build', 'copy']);
