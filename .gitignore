@@ -7,3 +7,4 @@ tmp
 .idea
 build/
 /Gruntfile.js
+.grunt/
