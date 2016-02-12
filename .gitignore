@@ -6,5 +6,4 @@ tmp
 .DS_Store
 .idea
 build/
-/Gruntfile.js
 .grunt/
