@@ -216,10 +216,15 @@ md-content {
 
 .factSheet .flip .factCard .back {
   height: 0px;
-  -webkit-text-stroke: 1px black;
   -webkit-transform: rotatex(-180deg);
-  color: #3d81ee;
-  font-size: 3em;
+  color: transparent;
   word-wrap: break-word;
   text-align: left;
+}
+
+.factSheet .flip .factCard.flipped .back {
+  -webkit-text-stroke: .03em black;
+  color: #3d81ee;
+  font-size: 3em;
+
 }
