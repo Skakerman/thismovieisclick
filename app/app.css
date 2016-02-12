@@ -183,27 +183,12 @@ md-content {
   }
 }
 
-.factSheet md-card img {
-  /*
-  max-width: 100%;
-  min-width: 30%;
-*/
-}
-
-
 /*         */
 /* Flipper */
 /*         */
 
-.factSheet flip {
+.factSheet .flip {
   -webkit-perspective: 800;
-/*  width: 400px;*/
-/*  height: 200px;*/
-/*  display: block;*/
-/*
-      position: relative;
-      margin: auto auto;
-*/
 }
 
 .factSheet .flip .factCard.flipped {
@@ -211,52 +196,30 @@ md-content {
 }
 
 .factSheet .flip .factCard {
-/*
-  width: 100%;
-  height: 100%;
-*/
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.75s;
   cursor: pointer;
 }
 
-
 .factSheet .flip .factCard .face {
   position: relative;
-  -webkit-backface-visibility: hidden ;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
   z-index: 2;
-    font-size: 2em;
-    word-wrap: break-word;
-    text-align: justify;
-/*    line-height: 200px;*/
-
 }
 
-/*
-.factSheet .flip .factCard .front {
-  position: relative;
-  z-index: 1;
+.factSheet .flip .factCard.flipped .front {  
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  font-size: 3em;
 }
-*/
 
 .factSheet .flip .factCard .back {
   height: 0px;
-  -webkit-backface-visibility: hidden ;
+  -webkit-text-stroke: 1px black;
   -webkit-transform: rotatex(-180deg);
+  color: #3d81ee;
+  font-size: 3em;
+  word-wrap: break-word;
+  text-align: left;
 }
-/*
-.factSheet .flip .factCard .front {
-  position: absolute;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.factSheet .flip .factCard .back {
-  position: absolute;
-  z-index: 2;
-  -webkit-transform: rotatex(-180deg);
-  background: blue;
-  background: white;
-  color: black;
-  cursor: pointer;
-}*/

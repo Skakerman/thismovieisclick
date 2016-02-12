@@ -1,7 +1,7 @@
 <div ng-controller="ClickFactsCtrl as facts" id="click_facts" ng-cloak layout-wrap>
   <section class="factSheet" layout="row" layout-wrap layout-align="center">
     <div class="flip" layout="row" layout-wrap>
-      <md-card class="factCard" ng-repeat="it in facts.triviaImages"
+      <md-card class="factCard" ng-repeat="it in trivia"
                ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"
                flex="22" ng-cloak>
         <div class="face front image-container">

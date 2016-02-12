@@ -9,65 +9,22 @@ angular.module('clickApp.clickFacts', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('ClickFactsCtrl', function ($scope, $http, $facts) {
-  debugger;
-  this.triviaImages = $facts.trivia;
-})
+.controller('ClickFactsCtrl', function ($scope, $http) {
+  var list = [];
+  
+  $scope.trivia = [{
+    imageURL: "assets/clickFact.jpg",
+    triviaWords: "Click is great!"
+  }];
 
-.factory('$facts', ['$http', function ($http) {
-  var wordFacts = null;
-  debugger;
-  $http.get('./clickFacts/clickFacts.json')
-    .success(function (response) {
-      wordFacts = response;
-    })
-    .error(function () {
-      wordFacts = [{
-        fact: "Click is great!"
-      }]
-    });
-
-  //debugger;
-  return {
-    trivia: loadPictures(),
-    //trivia: loadFacts()
-  };
-
-  function loadPictures() {
-    debugger;
-    var list = [],
-      master = {
-        imageURL: "assets/clickFact.jpg",
-        triviaWords: "Click is great!"
+  var promise = $http.get('clickFacts/clickFacts.json')
+    .then(function (response) {
+      for (var j = 0; j < response.data.length; j++) {
+        list.push({
+          imageURL: "assets/clickFact.jpg",
+          triviaWords: response.data[j].fact
+        });
       }
-    
-    $http.get('clickFacts/clickFacts.json')
-    .success(function (response) {
-      wordFacts = response;
+      $scope.trivia = list;
     })
-    .error(function () {
-      wordFacts = [{
-        fact: "Click is great!"
-      }]
-    });
-
-    for (var j = 0; j < 14; j++) {
-      list.push(angular.extend({}, master));
-    }
-    return list;
-  }
-
-  function loadFacts() {
-    debugger;
-    var list = [],
-      master = {
-        words: "Click is awesome!"
-      }
-
-    for (var j = 0; j < 14; j++) {
-      list.push(angular.extend({}, master));
-    }
-    return list;
-  }
-
-}]);
+});
