@@ -9,25 +9,22 @@ angular.module('clickApp.clickFacts', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('ClickFactsCtrl', function ($facts) {
-  this.triviaCollection = $facts.trivia;
-})
+.controller('ClickFactsCtrl', function ($scope, $http) {
+  var list = [];
+  
+  $scope.trivia = [{
+    imageURL: "assets/clickFact.jpg",
+    triviaWords: "Click is great!"
+  }];
 
-.factory('$facts', function () {
-  return {
-    trivia: loadPictures()
-  };
-
-  function loadPictures() {
-    var list = [],
-      master = {
-        imageURL: "assets/clickFact.jpg",
+  var promise = $http.get('clickFacts/clickFacts.json')
+    .then(function (response) {
+      for (var j = 0; j < response.data.length; j++) {
+        list.push({
+          imageURL: "assets/clickFact.jpg",
+          triviaWords: response.data[j].fact
+        });
       }
-
-    for (var j = 0; j < 14; j++) {
-      list.push(angular.extend({}, master));
-    }
-    return list;
-  }
-
+      $scope.trivia = list;
+    })
 });
