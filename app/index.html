@@ -10,11 +10,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Angular Material requires Angular.js Libraries -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
 
   <!-- Angular Material Library -->
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
@@ -29,6 +29,8 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="app.css">
 
+  <base href="/">
+
 </head>
 
 <body ng-controller="AppCtrl" ng-app="clickApp" layout="row" ng-cloak>
@@ -42,9 +44,9 @@
         </md-button>
       </section>
       <section layout="column" layout-align="stretch center">
-        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickHome">Home</md-button>
-        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickQuiz">Quiz</md-button>
-        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickFacts">Facts</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="/clickHome">Home</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="/clickQuiz">Quiz</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="/clickFacts">Facts</md-button>
       </section>
     </md-sidenav>
     <section layout="column" role="main" flex>
@@ -67,40 +69,6 @@
 
     </section>
   </div>
-  </div>
-
-
-
-  <!--  Arrange everything underneath the navbar -->
-  <!--
-  <div layout="column" layout-fill>
-    <md-toolbar>
-      <div class="md-toolbar-tools navbar" layout="row">
-        <ng-md-icon icon="menu" ng-click="toggleLeft()" style="fill: #fff" hide-gt-md></ng-md-icon>
-        <span flex></span>
-         Change to displaying unique message based on page 
-        This Movie is Click!
-      </div>
-    </md-toolbar>
--->
-
-  <!-- Arrange the sidenav and content side-by-side -->
-  <!--
-    <div layout="row" layout-fill>
-      <md-sidenav layout="column" class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-fill>
-        <section flex layout="column" layout-align="center">
-          <ng-md-icon icon="menu" ng-click="toggleLeft()" style="fill: #fff" hide-gt-md></ng-md-icon>
-          <md-button class="navBtn" ng-href="#/clickHome">Home</md-button>
-          <md-button class="navBtn" ng-href="#/clickQuiz">Quiz</md-button>
-          <md-button class="navBtn" ng-href="#/clickFacts">Facts</md-button>
-        </section>
-      </md-sidenav>
-      <ng-view>
-        View Content
-      </ng-view>
-    </div>
-  </div>
--->
 
   <script src="app.js"></script>
   <script src="clickHome/clickHome.js"></script>

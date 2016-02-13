@@ -2,15 +2,15 @@
 
 angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
 
-.config(['$routeProvider', function ($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider.when('/clickQuiz', {
     templateUrl: 'clickQuiz/clickQuiz.html',
     controller: 'ClickQuizCtrl'
   });
+  $locationProvider.html5Mode(true);
 }])
 
-.controller('ClickQuizCtrl', function () {
-})
+.controller('ClickQuizCtrl', function () {})
 
 .directive('quiz', ['quizFactory', function (quizFactory) {
   return {

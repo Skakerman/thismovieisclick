@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     copy: {
       build: {
         cwd: 'app',
-        src: ['**', '!**/*_test*'],
+        src: ['**', '!**/*_test*', '!bower_components/**'],
         dest: 'build',
         expand: true
       }

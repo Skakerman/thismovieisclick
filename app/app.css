@@ -199,6 +199,8 @@ md-content {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.75s;
   cursor: pointer;
+  min-height: 200px;
+  min-width: 136px;
 }
 
 .factSheet .flip .factCard .face {

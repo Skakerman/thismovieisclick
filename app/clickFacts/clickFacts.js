@@ -2,11 +2,12 @@
 
 angular.module('clickApp.clickFacts', ['ngRoute', 'ngMaterial'])
 
-.config(['$routeProvider', function ($routeProvider) {
+.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider.when('/clickFacts', {
     templateUrl: 'clickFacts/clickFacts.html',
     controller: 'ClickFactsCtrl'
   });
+  $locationProvider.html5Mode(true);
 }])
 
 .controller('ClickFactsCtrl', function ($scope, $http) {
