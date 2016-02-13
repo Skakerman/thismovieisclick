@@ -142,6 +142,16 @@ md-content {
   background-color: #123456;
 }
 
+.quizArea {
+  padding: 0em 0em 0em 1em;
+  width: 50%;
+}
+
+.quizScore {
+  padding-right: 2em;
+  min-width: 100px;
+}
+
 
 /*             */
 /* Click Facts */

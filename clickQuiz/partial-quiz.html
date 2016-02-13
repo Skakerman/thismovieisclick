@@ -1,6 +1,12 @@
-<div class="quiz-area" ng-show="inProgress">
+<div class="quizArea" ng-show="inProgress">
   <div ng-show="!quizOver">
-    <h2 id="question">{{question}}</h2>
+    <div layout="row">
+      <h2 id="question">{{question}}</h2>
+      <span flex></span>
+      <div class="quizScore" id="score" ng-show="inProgress || quizOver">
+        <h2>Score: {{score}}</h2>
+      </div>
+    </div>
     <ul id="options" ng-repeat="option in options">
       <md-button class="quizBtn" name="answer" id="{{option}}" value="{{option}}" ng-model="$parent.quiz" ng-click="checkAnswer(option)" ng-disabled="!answerMode" flex>{{option}}</md-button>
     </ul>
@@ -25,8 +31,4 @@
   <p>Click!</p>
   <p>Click 'Play' on the magic remote that Adam Sandler has in the movie Click to start the quiz!</p>
   <md-button id="startQuiz" class="quizBtn" ng-click="start()">Play</button>
-</div>
-
-<div id="score" ng-show="inProgress || quizOver">
-  Score: {{score}}
 </div>
