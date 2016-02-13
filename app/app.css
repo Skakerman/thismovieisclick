@@ -149,6 +149,7 @@ md-content {
 
 .quizScore {
   padding-right: 2em;
+  min-width: 100px;
 }
 
 
