@@ -10,11 +10,10 @@ angular.module('clickApp', [
   'ngMdIcons'
 ])
 
-.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.otherwise({
     redirectTo: '/'
   });
-  $locationProvider.html5Mode(true);
 }])
 
 .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {

@@ -28,9 +28,6 @@
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="app.css">
-
-  <base href="/">
-
 </head>
 
 <body ng-controller="AppCtrl" ng-app="clickApp" layout="row" ng-cloak>
@@ -44,9 +41,9 @@
         </md-button>
       </section>
       <section layout="column" layout-align="stretch center">
-        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="/clickHome">Home</md-button>
-        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="/clickQuiz">Quiz</md-button>
-        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="/clickFacts">Facts</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickHome">Home</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickQuiz">Quiz</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickFacts">Facts</md-button>
       </section>
     </md-sidenav>
     <section layout="column" role="main" flex>

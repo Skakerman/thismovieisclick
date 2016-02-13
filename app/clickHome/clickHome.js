@@ -2,19 +2,12 @@
 
 angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 
-.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+.config(['$routeProvider', function ($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'clickHome/clickHome.html',
     controller: 'ClickHomeCtrl'
   });
-  $locationProvider.html5Mode(true);
 }])
-
-////TODO: Eventually make this responsive
-//.controller('ClickHomeCtrl', ['$scope', function ($scope) {
-//  //  $scope.grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-//  $scope.grid = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-//}])
 
 .controller('ClickHomeCtrl', function ($pictures) {
   debugger;
