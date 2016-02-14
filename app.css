@@ -142,9 +142,15 @@ md-content {
   background-color: #123456;
 }
 
+.quizBtn[disabled] {
+  /* Should probably change this at some point */
+  background-color: lightgray;
+}
+
 .quizArea {
   padding: 0em 0em 0em 1em;
   width: 50%;
+  min-width: 300px;
 }
 
 .quizScore {
@@ -152,17 +158,12 @@ md-content {
   min-width: 100px;
 }
 
-
 /*             */
 /* Click Facts */
 /*             */
 
 .factSheet md-card {
   display: block;
-  /*
-  padding: .6%;
-  margin: 1px;
-*/
 }
 
 .factSheet md-card.flex-22 {
