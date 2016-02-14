@@ -17,6 +17,8 @@ md-whiteframe {
 .catalog md-card.flex-22 {
   max-height: 100%;
   box-sizing: border-box;
+  -moz-box-flex: 1;
+  -moz-flex: 1 1 24%;
   -webkit-box-flex: 1;
   -webkit-flex: 1 1 24%;
   -ms-flex: 1 1 24%;
@@ -160,13 +162,7 @@ md-content {
 }
 
 
-/*             */
-
-
 /* Click Facts */
-
-
-/*             */
 
 .factSheet md-card {
   display: block;
@@ -201,25 +197,23 @@ md-content {
 }
 
 
-/*         */
-
-
 /* Flipper */
-
-
-/*         */
 
 .factSheet .flip {
   -webkit-perspective: 800;
+  perspective: 800;
 }
 
 .factSheet .flip .factCard.flipped {
   -webkit-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
 }
 
 .factSheet .flip .factCard {
   -webkit-transform-style: preserve-3d;
   -webkit-transition: 0.75s;
+  transform-style: preserve-3d;
+  transition: 0.75s;
   cursor: pointer;
   min-height: 200px;
   min-width: 136px;
@@ -241,6 +235,7 @@ md-content {
 .factSheet .flip .factCard .back {
   height: 0px;
   -webkit-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
   color: transparent;
   word-wrap: break-word;
   text-align: left;
@@ -248,6 +243,7 @@ md-content {
 
 .factSheet .flip .factCard.flipped .back {
   -webkit-text-stroke: .03em black;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   color: #3d81ee;
   font-size: 3em;
 }
