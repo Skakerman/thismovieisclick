@@ -29,11 +29,11 @@ module.exports = function (grunt) {
     uglify: {
       build: {
         options: {
-          mangle: false,
+          mangle: true,
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
         },
         files: {
-          'build/app.min.js': ['build/**/*.js']
+          'build/app.min.js': ['app/**/*.js']
         }
       }
     }

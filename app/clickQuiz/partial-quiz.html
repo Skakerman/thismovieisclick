@@ -1,25 +1,26 @@
-<div class="quizArea" ng-show="inProgress">
+<div class="quizArea container" ng-show="inProgress" ng-cloak>
   <div ng-show="!quizOver">
     <div layout="row">
       <h2 id="question">{{question}}</h2>
     </div>
     <!-- Check if valid before submitting -->
-    <form name="choices" class="quizChoices" ng-submit="choices.$valid && checkAnswer()">
+    <form name="choices" class="quizChoices" ng-submit="choices.$valid && checkAnswer()" ng-cloak>
       <md-radio-group ng-disabled="!answerMode" ng-model="selected" required>
-        <md-radio-button ng-repeat="option in options" value="{{option}}" ng-disabled="!answerMode" aria-label="fart">
+        <md-radio-button ng-repeat="option in options" value="{{option}}" ng-disabled="!answerMode">
           {{option}}
         </md-radio-button>
       </md-radio-group>
 
       <md-button type="submit" class="quizBtn" ng-show="answerMode" ng-disabled="!choices.$valid" flex>Submit</md-button>
+      <md-button class="quizBtn" ng-click="nextQuestion()" ng-show="!answerMode" class="next-question btn btn-primary">Quiz on!</md-button>
     </form>
 
     <div ng-show="!answerMode">
-      <md-button class="quizBtn" ng-click="nextQuestion()" class="next-question btn btn-primary">Quiz on!</md-button>
+<!--      <md-button class="quizBtn" ng-click="nextQuestion()" ng-hide="answerMode" class="next-question btn btn-primary">Quiz on!</md-button>-->
       <br/>
       <!-- TODO: Eventually make this a dialog? -->
       <span ng-show="correctAns">That is correct!</span>
-      <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}".</span>
+      <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}"</span>
     </div>
 
     <div class="quizScore" id="score" ng-show="inProgress || quizOver">
