@@ -42,6 +42,7 @@
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickHome">Home</md-button>
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickQuiz">Quiz</md-button>
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickFacts">Facts</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickAbout">About</md-button>
       </section>
     </md-sidenav>
     <section layout="column" role="main" flex>
@@ -50,7 +51,7 @@
           <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
             <ng-md-icon icon="menu" style="fill: #fff" layout-align="center center"></ng-md-icon>
           </md-button>
-          {{topNavTitle}}
+          {{ topNavTitle }}
           <span flex></span>This Movie is Click!
         </div>
       </md-toolbar>
@@ -70,6 +71,7 @@
   <script src="clickHome/clickHome.js"></script>
   <script src="clickQuiz/clickQuiz.js"></script>
   <script src="clickFacts/clickFacts.js"></script>
+  <script src="clickAbout/clickAbout.js"></script>
 
 </body>
 
