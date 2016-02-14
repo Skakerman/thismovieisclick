@@ -10,7 +10,7 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
 }])
 
 .controller('ClickHomeCtrl', ['$rootScope', '$pictures', function ($rootScope, $pictures) {
-  $rootScope.topNavTitle = "ClickTest!";
+  $rootScope.topNavTitle = "Click!";
   this.filterBy = "All Pictures";
   this.sortedBy = "Featured";
   this.availableFilters = $pictures.availableFilters;
