@@ -7,6 +7,7 @@ angular.module('clickApp', [
   'clickApp.clickHome',
   'clickApp.clickQuiz',
   'clickApp.clickFacts',
+  'clickApp.clickAbout',
   'ngMdIcons'
 ])
 

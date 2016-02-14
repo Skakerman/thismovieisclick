@@ -12,10 +12,6 @@ md-whiteframe {
 
 .catalog md-card {
   display: block;
-  /*
-  padding: 2%;
-  margin: 1px;
-*/
 }
 
 .catalog md-card.flex-22 {
