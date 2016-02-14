@@ -45,7 +45,7 @@
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickAbout">About</md-button>
       </section>
     </md-sidenav>
-    <section layout="column" role="main" flex>
+    <md-content layout="column" role="main" flex>
       <md-toolbar>
         <div class="md-toolbar-tools navbar" layout="row" layout-fill>
           <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
@@ -56,15 +56,15 @@
         </div>
       </md-toolbar>
 
-      <md-content id="content" role="content" layout="column" layout-padding>
+      <md-content id="content" role="content" layout="column" layout-padding ng-cloak>
         <md-content class="md-whiteframe-z2" ng-cloak>
           <ng-view>
             View Content
           </ng-view>
         </md-content>
-      </section>
+      </md-content>
 
-    </section>
+    </md-content>
   </div>
 
   <script src="app.js"></script>
