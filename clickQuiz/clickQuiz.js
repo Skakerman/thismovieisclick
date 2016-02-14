@@ -9,9 +9,11 @@ angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('ClickQuizCtrl', function ($scope) {})
+.controller('ClickQuizCtrl', ['$rootScope', function ($rootScope) {
+  $rootScope.topNavTitle = "Click Quiz, hotshot!";
+}])
 
-.directive('quiz', ['quizFactory', function (quizFactory, $mdDialog) {
+.directive('quiz', ['quizFactory', function (quizFactory) {
   return {
     restrict: 'AE',
     scope: {},

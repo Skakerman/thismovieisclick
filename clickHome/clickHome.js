@@ -9,13 +9,14 @@ angular.module('clickApp.clickHome', ['ngRoute', 'ngAnimate', 'ngMaterial'])
   });
 }])
 
-.controller('ClickHomeCtrl', function ($pictures) {
+.controller('ClickHomeCtrl', ['$rootScope', '$pictures', function ($rootScope, $pictures) {
+  $rootScope.topNavTitle = "Click!";
   this.filterBy = "All Pictures";
   this.sortedBy = "Featured";
   this.availableFilters = $pictures.availableFilters;
   this.availableSorts = $pictures.availableSorts;
   this.catalog = $pictures.catalog;
-})
+}])
 
 .factory('$pictures', function () {
   return {

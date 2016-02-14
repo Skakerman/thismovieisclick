@@ -9,7 +9,9 @@ angular.module('clickApp.clickFacts', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('ClickFactsCtrl', function ($scope, $http) {
+.controller('ClickFactsCtrl', ['$scope', '$rootScope', '$http', function ($scope, $rootScope, $http) {
+  $rootScope.topNavTitle = "Facts!";
+  
   var list = [];
   
   $scope.trivia = [{
@@ -27,4 +29,4 @@ angular.module('clickApp.clickFacts', ['ngRoute', 'ngMaterial'])
       }
       $scope.trivia = list;
     })
-});
+}]);

@@ -9,6 +9,10 @@ md-whiteframe {
   background: #fff;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .catalog md-card {
   display: block;
   /*
@@ -143,19 +147,18 @@ md-content {
 }
 
 .quizBtn[disabled] {
-  /* Should probably change this at some point */
   background-color: lightgray;
 }
 
 .quizArea {
   padding: 0em 0em 0em 1em;
-  width: 50%;
-  min-width: 300px;
 }
 
 .quizScore {
+/*
   padding-right: 2em;
   min-width: 100px;
+*/
 }
 
 /*             */
