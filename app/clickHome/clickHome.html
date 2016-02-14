@@ -1,7 +1,7 @@
 <div ng-controller="ClickHomeCtrl as pictures" id="click_home" flex ng-cloak>
   <section class="catalog" layout layout-wrap layout-align="center">
-    <md-card ng-repeat="it in pictures.catalog" flex="22" flex-sm="46" flex-xs="80">
-      <img src="{{ it.imageURL }}"></img>
+    <md-card ng-repeat="pics in pictures.catalog" flex="22" flex-sm="46" flex-xs="80">
+      <img ng-src="{{ pics.imageURL }}"></img>
     </md-card>
   </section>
 </div>
