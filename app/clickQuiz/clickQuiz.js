@@ -9,9 +9,9 @@ angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
   });
 }])
 
-.controller('ClickQuizCtrl', function () {})
+.controller('ClickQuizCtrl', function ($scope) {})
 
-.directive('quiz', ['quizFactory', function (quizFactory) {
+.directive('quiz', ['quizFactory', function (quizFactory, $mdDialog) {
   return {
     restrict: 'AE',
     scope: {},
@@ -37,19 +37,6 @@ angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
         }
       };
 
-      scope.checkAnswer = function (choice) {
-        console.log("Choice: " + choice);
-
-        if (choice == scope.options[scope.correct]) {
-          scope.score++;
-          scope.correctAns = true;
-        } else {
-          scope.correctAns = false;
-        }
-
-        scope.answerMode = false;
-      };
-
       scope.nextQuestion = function () {
         scope.id++;
         scope.getQuestion();
@@ -58,6 +45,23 @@ angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
       scope.reset = function () {
         scope.score = 0;
         scope.inProgress = false;
+      };
+
+      scope.checkAnswer = function ($mdDialog) {
+        debugger;
+        console.log("Choice: " + scope.selected);
+
+        if (scope.selected == scope.options[scope.correct]) {
+          scope.score++;
+          scope.correctAns = true;
+        } else {
+          scope.correctAns = false;
+        }
+
+        scope.answerMode = false;
+
+        // Clear out selected variable to reset validation
+        delete scope.selected;
       };
     }
   }
