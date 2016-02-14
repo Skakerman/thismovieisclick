@@ -1,14 +1,14 @@
 <div ng-controller="ClickFactsCtrl as facts" id="click_facts" ng-cloak layout-wrap>
   <section class="factSheet" layout="row" layout-wrap layout-align="center">
     <div class="flip" layout="row" layout-xs="column" layout-wrap>
-      <md-card class="factCard" ng-repeat="it in trivia"
+      <md-card class="factCard" ng-repeat="facts in trivia"
                ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped"
                flex="22" ng-cloak>
         <div class="face front image-container">
-          <img src="{{ it.imageURL }}" />
+          <img ng-src="{{ facts.imageURL }}" />
         </div>
         <div class="face back">
-          {{ it.triviaWords }}
+          {{ facts.triviaWords }}
         </div>
       </md-card>
     </div>
