@@ -50,7 +50,6 @@ angular.module('clickApp.clickQuiz', ['ngRoute', 'ngMaterial'])
       };
 
       scope.checkAnswer = function ($mdDialog) {
-        debugger;
         console.log("Choice: " + scope.selected);
 
         if (scope.selected == scope.options[scope.correct]) {

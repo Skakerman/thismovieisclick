@@ -3,14 +3,11 @@
 body {
   overflow: hidden;
   background-color: #f6f6f6;
+  font-family: 'Open Sans', sans-serif;
 }
 
 md-whiteframe {
   background: #fff;
-}
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
 }
 
 .catalog md-card {
@@ -150,19 +147,29 @@ md-content {
   background-color: lightgray;
 }
 
+.quizIntro {
+  font-size: 2em;
+  padding: 0em 1.5em 1em 1.5em;
+}
+
 .quizArea {
   padding: 0em 0em 0em 1em;
 }
 
 .quizScore {
-/*
+  /*
   padding-right: 2em;
   min-width: 100px;
 */
 }
 
+
 /*             */
+
+
 /* Click Facts */
+
+
 /*             */
 
 .factSheet md-card {
@@ -197,8 +204,13 @@ md-content {
   }
 }
 
+
 /*         */
+
+
 /* Flipper */
+
+
 /*         */
 
 .factSheet .flip {
@@ -224,7 +236,7 @@ md-content {
   z-index: 2;
 }
 
-.factSheet .flip .factCard.flipped .front {  
+.factSheet .flip .factCard.flipped .front {
   -webkit-filter: blur(5px);
   filter: blur(5px);
   font-size: 3em;
@@ -242,5 +254,4 @@ md-content {
   -webkit-text-stroke: .03em black;
   color: #3d81ee;
   font-size: 3em;
-
 }
