@@ -24,17 +24,17 @@
   <!--  Material Icons -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="app.css">
 </head>
 
 <body ng-controller="AppCtrl" ng-app="clickApp" layout="row" ng-cloak>
 
   <div layout="row" layout-fill>
-    <md-sidenav layout="column" class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" layout-fill>
+    <md-sidenav layout="column" class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <!--      There's got to be a better way to center this button -->
-      <section layout="column" layout-align="center center">
-        <md-button class="md-icon-button navBtn" ng-click="toggleLeft()" hide-gt-md>
+      <section layout="column navBtn" ng-click="toggleLeft()" layout-align="center center">
+        <md-button class="md-icon-button navBtn" hide-gt-md>
           <ng-md-icon icon="menu" style="fill: #fff"></ng-md-icon>
         </md-button>
       </section>
@@ -47,8 +47,8 @@
     </md-sidenav>
     <md-content layout="column" role="main" flex>
       <md-toolbar>
-        <div class="md-toolbar-tools navbar" layout="row" layout-fill>
-          <md-button class="md-icon-button" ng-click="toggleLeft()" hide-gt-md>
+        <div class="md-toolbar-tools navbar" layout="row" layout-fill ng-click="toggleLeft()">
+          <md-button class="md-icon-button" hide-gt-md>
             <ng-md-icon icon="menu" style="fill: #fff" layout-align="center center"></ng-md-icon>
           </md-button>
           {{ topNavTitle }}
@@ -58,9 +58,7 @@
 
       <md-content id="content" role="content" layout="column" layout-padding ng-cloak>
         <md-content class="md-whiteframe-z2" ng-cloak>
-          <ng-view>
-            View Content
-          </ng-view>
+          <ng-view></ng-view>
         </md-content>
       </md-content>
 
