@@ -1,9 +1,12 @@
 <div class="quizArea container" ng-show="inProgress" ng-cloak>
+
   <div ng-show="!quizOver">
-    <div layout="row">
+
+    <div class="quizChoices" layout="row">
       <h2 id="question">{{question}}</h2>
     </div>
-    <!-- Check if valid before submitting -->
+
+    <!-- In ng-submit we check if this is valid before submitting -->
     <form name="choices" class="quizChoices" ng-submit="choices.$valid && checkAnswer()" ng-cloak>
       <md-radio-group ng-disabled="!answerMode" ng-model="selected" required>
         <md-radio-button ng-repeat="option in options" value="{{option}}" ng-disabled="!answerMode">
@@ -15,16 +18,16 @@
       <md-button class="quizBtn" ng-click="nextQuestion()" ng-show="!answerMode" class="next-question btn btn-primary">Quiz on!</md-button>
     </form>
 
-    <div ng-show="!answerMode">
-<!--      <md-button class="quizBtn" ng-click="nextQuestion()" ng-hide="answerMode" class="next-question btn btn-primary">Quiz on!</md-button>-->
-      <br/>
-      <!-- TODO: Eventually make this a dialog? -->
-      <span ng-show="correctAns">That is correct!</span>
-      <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}"</span>
-    </div>
-
     <div class="quizScore" id="score" ng-show="inProgress || quizOver">
       <h2>Score: {{score}}</h2>
+    </div>
+
+    <div ng-show="!answerMode">
+      <!-- TODO: Eventually make this a dialog? -->
+      <h2>
+        <span ng-show="correctAns">That is correct!</span>
+        <span ng-show="!correctAns">Sorry, wrong! The answer is "{{options[correct]}}"</span>
+      </h2>
     </div>
 
   </div>
@@ -34,6 +37,7 @@
     <p>Click the rewind button on the magic remote that Adam Sandler has in the movie Click to play again!</p>
     <md-button class="quizBtn" ng-click="reset()">Rewind</button>
   </div>
+
 </div>
 
 <div class="quizIntro" ng-show="!inProgress">

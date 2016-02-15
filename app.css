@@ -3,7 +3,7 @@
 body {
   overflow: hidden;
   background-color: #f6f6f6;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 md-whiteframe-z2 {
@@ -154,11 +154,8 @@ md-content {
   padding: 0em 0em 0em 1em;
 }
 
-.quizScore {
-  /*
-  padding-right: 2em;
-  min-width: 100px;
-*/
+.quizChoices {
+  padding: 0em 0em 0em 1em;  
 }
 
 
