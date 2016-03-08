@@ -28,5 +28,10 @@
     "question": "Wait, what? Click was nominated for an Oscar?",
     "options": ["Yeah but it was for makeup", "No way", "That has to be a lie"],
     "correct": 0
+  },
+  {
+    "question": "What was Click's domestic gross?",
+    "options": ["$215 million", "$4 billion", "$137 million"],
+    "correct": 2
   }
 ]
