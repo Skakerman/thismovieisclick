@@ -28,9 +28,9 @@
   <link rel="stylesheet" href="app.css">
 </head>
 
-<body ng-controller="AppCtrl" ng-app="clickApp" layout="row" ng-cloak>
+<body>
 
-  <div layout="row" layout-fill>
+  <div ng-controller="AppCtrl" ng-app="clickApp" layout="row" ng-cloak layout-fill>
     <md-sidenav layout="column" class="md-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <!--      There's got to be a better way to center this button -->
       <section layout="column navBtn" ng-click="toggleLeft()" layout-align="center center">
@@ -42,6 +42,7 @@
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickHome">Home</md-button>
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickQuiz">Quiz</md-button>
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickFacts">Facts</md-button>
+        <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickGame">Game</md-button>
         <md-button class="navBtn" ng-click="toggleLeft()" ng-href="#/clickAbout">About</md-button>
       </section>
     </md-sidenav>
@@ -70,6 +71,7 @@
   <script src="clickQuiz/clickQuiz.js"></script>
   <script src="clickFacts/clickFacts.js"></script>
   <script src="clickAbout/clickAbout.js"></script>
+  <script src="clickGame/clickGame.js"></script>
 
 </body>
 
