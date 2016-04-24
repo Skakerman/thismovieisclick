@@ -15,7 +15,7 @@
       </md-radio-group>
 
       <md-button type="submit" class="quizBtn" ng-show="answerMode" ng-disabled="!choices.$valid" flex>Submit</md-button>
-      <md-button class="quizBtn" ng-click="nextQuestion()" ng-hide="answerMode" class="next-question btn btn-primary">Quiz on!</md-button>
+      <md-button class="quizBtn" ng-click="nextQuestion()" ng-show="!answerMode" class="next-question btn btn-primary">Quiz on!</md-button>
     </form>
 
     <div class="quizScore" id="score" ng-show="inProgress || quizOver">

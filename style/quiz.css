@@ -1,0 +1,30 @@
+/* Click Quiz */
+
+.quizBtn {
+  background-color: #3d81ee;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.quizBtn:not([disabled]):hover {
+  /* Should probably change this at some point */
+  background-color: #123456;
+}
+
+.quizBtn[disabled] {
+  background-color: lightgray;
+}
+
+.quizIntro {
+  font-size: 2em;
+  padding: 0em 1.5em 1em 1.5em;
+}
+
+.quizArea {
+  padding: 0em 0em 0em 1em;
+}
+
+.quizChoices {
+  padding: 0em 0em 0em 1em;  
+}
